@@ -1,221 +1,215 @@
-# Telegram Bot Dashboard - جمعية حفظ النعمة  
+Telegram Bot Dashboard - جمعية حفظ النعمة
+لوحة تحكم احترافية لروبوت التلغرام بميزات شاملة تشمل الردود المدعومة بالذكاء الاصطناعي، تحديد معدل الطلبات، إدارة البيانات، وواجهة مبنية على Streamlit.
 
-A professional-grade Telegram bot dashboard with comprehensive features including AI-powered responses, rate limiting, data management, and a Streamlit-based interface.  
+الميزات
+الميزات الأساسية للروبوت
+ردود مدعومة بالذكاء الاصطناعي: تستخدم واجهة برمجة تطبيقات Groq للتعامل الذكي مع المحادثات.
 
----
+تحديد معدل الطلبات والحماية من السبام: حماية مدمجة ضد الاستخدام المسيء.
 
-## Features  
+نسخ احتياطي تلقائي للبيانات: تخزين البيانات بصيغة Excel/CSV مع نسخ احتياطي تلقائي.
 
-### Core Bot Features  
-- **AI-Powered Responses**: Uses Groq API for intelligent conversation handling.  
-- **Rate Limiting & Spam Protection**: Built-in protection against abuse.  
-- **Automatic Data Backups**: Excel/CSV-based data storage with automatic backups.  
-- **Comprehensive Error Handling**: Robust error handling and logging.  
-- **Statistics & Monitoring**: Built-in analytics and health monitoring.  
-- **Admin Commands**: Restricted commands for administrators.  
+معالجة شاملة للأخطاء: معالجة قوية للأخطاء وتسجيلها.
 
-### Dashboard Features  
-- **Theme Switcher**: Choose between Default, Light, Dark, and Purple themes.  
-- **Overview**: Real-time metrics, recent activity, and bot status.  
-- **Analytics**: Interactive charts, user message timeline, and intent heatmap.  
-- **Data Management**: Search/filter by user, backup creation, data export, and management.  
-- **Security**: Rate limiting status, threat detection, and notification system.  
-- **Settings**: Configuration management and environment variables.  
-- **Logs**: Real-time log monitoring, download logs, and debugging.  
-- **Feedback Form**: Submit feedback or report issues directly from the dashboard.  
-- **Mobile Optimization**: Responsive layout for mobile devices.  
-- **Real-Time Bot Status**: Live status and last message info.  
-- **Enhanced Data Visualization**: Bar/area charts for intents and activity.  
+الإحصائيات والمراقبة: تحليلات مدمجة ومراقبة للحالة.
 
----
+أوامر المشرفين: أوامر مقيدة للمشرفين.
 
-## Quick Start (Clean Machine)  
+ميزات لوحة التحكم
+مبدل السمة: اختر بين السمات الافتراضية، الفاتحة، الداكنة، والبنفسجية.
 
-### 1. Install Dependencies  
-```bash
-pip install -r requirements.txt
-2. Run the Dashboard
+نظرة عامة: مقاييس آنية، النشاط الحديث، وحالة الروبوت.
+
+التحليلات: مخططات تفاعلية، خط زمني لرسائل المستخدمين، وخريطة حرارية للنوايا.
+
+إدارة البيانات: البحث/التصفية حسب المستخدم، إنشاء نسخ احتياطية، تصدير البيانات، وإدارتها.
+
+الأمان: حالة تحديد معدل الطلبات، كشف التهديدات، ونظام الإشعارات.
+
+الإعدادات: إدارة التهيئة ومتغيرات البيئة.
+
+السجلات: مراقبة السجلات آنياً، تحميل السجلات، وتصحيح الأخطاء.
+
+نموذج الملاحظات: أرسل ملاحظاتك أو أبلغ عن مشاكل مباشرة من لوحة التحكم.
+
+تحسين للجوال: تخطيط متجاوب لأجهزة الجوال.
+
+حالة الروبوت الآنية: معلومات آنية وآخر رسالة.
+
+تصور معزز للبيانات: مخططات شريطية/منطقة للنوايا والنشاط.
+
+البدء السريع (على جهاز نظيف)
+1. تثبيت المتطلبات
 bash
-نسخ
-تحرير
-# Option 1: Direct Streamlit command
+pip install -r requirements.txt
+2. تشغيل لوحة التحكم
+bash
+# الخيار 1: أمر Streamlit المباشر
 streamlit run streamlit_dashboard.py
 
-# Option 2: Use the helper script
+# الخيار 2: استخدام البرنامج المساعد
 python run_dashboard.py
 
-# Option 3: Manual Streamlit command
+# الخيار 3: أمر Streamlit يدوي
 python -m streamlit run streamlit_dashboard.py --server.port 8501
-The dashboard will be available at:
+ستكون لوحة التحكم متاحة على:
 http://localhost:8501
 
-Project Structure
-bash
-نسخ
-تحرير
+هيكلية المشروع
+text
 chatbot/
-├── streamlit_dashboard.py    # Main dashboard application
-├── config.py                 # Configuration with sane defaults
-├── utils/                    # Utility modules
+├── streamlit_dashboard.py    # التطبيق الرئيسي للوحة التحكم
+├── config.py                 # التهيئة مع إعدادات افتراضية معقولة
+├── utils/                    # وحدات الأدوات المساعدة
 │   ├── __init__.py
-│   ├── data_manager.py       # Excel/CSV data handling
-│   ├── rate_limiter.py       # Rate limiting logic
-│   └── groq_client.py        # Dummy Groq client
-├── bot_upgraded.py           # Minimal bot stub
-├── requirements.txt          # Essential dependencies
-├── run_dashboard.py          # Dashboard launcher
-├── env.example               # Environment template
-├── .gitignore                # Git ignore rules
-└── README.md                 # Documentation
-Configuration
-Environment Variables (Optional)
-Create a .env file for custom configuration:
+│   ├── data_manager.py       # التعامل مع بيانات Excel/CSV
+│   ├── rate_limiter.py       # منطق تحديد معدل الطلبات
+│   └── groq_client.py        # عميل Groq افتراضي
+├── bot_upgraded.py           # نموذج مصغر للروبوت
+├── requirements.txt          # المتطلبات الأساسية
+├── run_dashboard.py          # مشغل لوحة التحكم
+├── env.example               # قالب بيئة
+├── .gitignore                # قواعد تجاهل Git
+└── README.md                 # التوثيق
+التهيئة
+متغيرات البيئة (اختياري)
+أنشئ ملف .env للتهيئة المخصصة:
 
-env
-نسخ
-تحرير
-# Bot configuration
+text
+# تهيئة الروبوت
 BOT_TOKEN=your_telegram_bot_token_here
 GROQ_API_KEY=your_groq_api_key_here
 
-# File paths
+# مسارات الملفات
 EXCEL_FILE=requests.xlsx
 BACKUP_DIR=backups
 
-# Rate limiting
+# تحديد معدل الطلبات
 MAX_REQUESTS_PER_MINUTE=10
 MAX_REQUESTS_PER_HOUR=100
 
-# Logging
+# التسجيل
 LOG_LEVEL=INFO
-Default Values
-If no .env file is provided, the system uses these defaults:
+القيم الافتراضية
+إذا لم يتم توفير ملف .env، يستخدم النظام هذه الإعدادات الافتراضية:
 
-Data File: requests.xlsx
+ملف البيانات: requests.xlsx
 
-Backup Directory: backups/
+مجلد النسخ الاحتياطي: backups/
 
-Rate Limits: 10/minute, 100/hour
+حدود الطلبات: 10/دقيقة، 100/ساعة
 
-Log Level: INFO
+مستوى التسجيل: INFO
 
-Dashboard Usage
-Starting the Dashboard
-The dashboard runs fully standalone and will:
+استخدام لوحة التحكم
+بدء لوحة التحكم
+تعمل لوحة التحكم بشكل مستقل كلياً وستقوم بما يلي:
 
-Auto-create necessary directories and files.
+الإنشاء التلقائي للمجلدات والملفات الضرورية.
 
-Fall back to CSV if Excel engine is unavailable.
+التراجع إلى CSV إذا كان محرك Excel غير متوفر.
 
-Handle missing modules gracefully with fallbacks.
+التعامل مع الوحدات الناقصة بأسلوب متحفظ مع بدائل.
 
-Show import status for troubleshooting.
+عرض حالة الاستيراد لتصحيح المشاكل.
 
-Dashboard Tabs
-Overview: Key metrics and recent activity.
+ألسنة لوحة التحكم
+نظرة عامة: المقاييس الرئيسية والنشاط الحديث.
 
-Analytics: Charts and user behavior analysis.
+التحليلات: مخططات وتحليل سلوك المستخدم.
 
-Data Management: Backup and data operations.
+إدارة البيانات: النسخ الاحتياطي وعمليات البيانات.
 
-Security: Rate limiting and threat monitoring.
+الأمان: تحديد معدل الطلبات ومراقبة التهديدات.
 
-Settings: Configuration management.
+الإعدادات: إدارة التهيئة.
 
-Logs: Real-time log viewing.
+السجلات: عرض السجلات آنياً.
 
-Troubleshooting
-Common Issues
-Dashboard Won’t Start
+استكشاف الأخطاء وإصلاحها
+المشاكل الشائعة
+لوحة التحكم لا تبدأ
 
 bash
-نسخ
-تحرير
-# Check Python version
-python --version  # Should be 3.8+
+# تحقق من إصدار البايثون
+python --version  # يجب أن يكون 3.8+
 
-# Reinstall dependencies
+# أعد تثبيت المتطلبات
 pip install -r requirements.txt --force-reinstall
 
-# Check Streamlit installation
+# تحقق من تثبيت Streamlit
 streamlit --version
-Import Errors
+أخطاء الاستيراد
 
-The dashboard handles missing modules gracefully.
+تتعامل لوحة التحكم مع الوحدات الناقصة بأسلوب متحفظ.
 
-Check the import status warning at the top.
+تحقق من تحذير حالة الاستيراد في الأعلى.
 
-All functionality will work with fallbacks.
+جميع الوظائف ستعمل مع البدائل.
 
-Excel/CSV Issues
+مشاكل Excel/CSV
 
-Dashboard automatically falls back to CSV if Excel fails.
+تتراجع لوحة التحكم تلقائياً إلى CSV إذا فشل Excel.
 
-Ensure openpyxl is installed:
+تأكد من تثبيت openpyxl:
 
 bash
-نسخ
-تحرير
 pip install openpyxl
-Check file permissions in the project directory.
+تحقق من صلاحيات الملف في مجلد المشروع.
 
-Port Already in Use
+المنفذ مستخدم already
 
 bash
-نسخ
-تحرير
-# Use different port
+# استخدم منفذ مختلف
 streamlit run streamlit_dashboard.py --server.port 8502
-Data File Issues
-Missing file: Dashboard creates empty structure automatically.
+مشاكل ملف البيانات
+الملف مفقود: تقوم لوحة التحكم بإنشاء هيكل فارغ تلقائياً.
 
-Permission errors: Check write permissions in project directory.
+أخطاء الصلاحيات: تحقق من صلاحيات الكتابة في مجلد المشروع.
 
-Corrupted files: Use backup feature or clear data option.
+ملفات تالفة: استخدم ميزة النسخ الاحتياطي أو خيار مسح البيانات.
 
-Data Management
-Automatic Features
-File creation on first run.
+إدارة البيانات
+الميزات التلقائية
+إنشاء الملف عند التشغيل الأول.
 
-Automatic timestamped backups.
+نسخ احتياطية تلقائية مع الطابع الزمني.
 
-Format fallback: Excel → CSV.
+تراجع التنسيق: Excel → CSV.
 
-Graceful error recovery.
+استعادة الأخطاء بأسلوب متحفظ.
 
-Manual Operations
-Create Backup: Click backup button in Data Management tab.
+العمليات اليدوية
+إنشاء نسخة احتياطية: انقر على زر النسخ الاحتياطي في لسان إدارة البيانات.
 
-Export Data: Download as CSV from Data Management tab.
+تصدير البيانات: حمل كملف CSV من لسان إدارة البيانات.
 
-Clear Data: Available with confirmation checkbox.
+مسح البيانات: متاح مع خانة تأكيد.
 
-Security Features
-Rate Limiting: Built-in protection against abuse.
+ميزات الأمان
+تحديد معدل الطلبات: حماية مدمجة ضد الاستخدام المسيء.
 
-File Permissions: Automatic permission checking.
+صلاحيات الملفات: فحص صلاحيات الملفات تلقائياً.
 
-Data Validation: Input sanitization and validation.
+تحقق من البيانات: التطهير والتحقق من المدخلات.
 
-Error Logging: Comprehensive error tracking.
+تسجيل الأخطاء: تتبع شامل للأخطاء.
 
-Mobile Support
-The dashboard is fully responsive and works on:
+دعم الجوال
+لوحة التحكم متجاوبة بالكامل وتعمل على:
 
-Desktop computers
+أجهزة الكمبيوتر المكتبية
 
-Tablets
+الأجهزة اللوحية
 
-Mobile phones
+الهواتف المحمولة
 
-All modern browsers
+جميع المتصفحات الحديثة
 
-Production Deployment
-Systemd Service (Linux)
+النشر للإنتاج
+خدمة Systemd (لينكس)
 bash
-نسخ
-تحرير
-# Create service file
+# إنشاء ملف الخدمة
 sudo nano /etc/systemd/system/telegram-dashboard.service
 
 [Unit]
@@ -232,13 +226,11 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 
-# Enable and start service
+# تفعيل وتشغيل الخدمة
 sudo systemctl enable telegram-dashboard
 sudo systemctl start telegram-dashboard
-Docker Deployment
+النشر باستخدام Docker
 dockerfile
-نسخ
-تحرير
 FROM python:3.9-slim
 WORKDIR /app
 COPY requirements.txt .
@@ -246,57 +238,53 @@ RUN pip install -r requirements.txt
 COPY . .
 EXPOSE 8501
 CMD ["streamlit", "run", "streamlit_dashboard.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
-Dependencies
-Core Dependencies
-streamlit==1.28.1 – Web dashboard framework.
+المتطلبات
+المتطلبات الأساسية
+streamlit==1.28.1 – إطار عمل لوحة التحكم على الويب.
 
-pandas==2.1.4 – Data processing and analysis.
+pandas==2.1.4 – معالجة وتحليل البيانات.
 
-plotly==5.17.0 – Interactive charts and visualizations.
+plotly==5.17.0 – مخططات وتصورات تفاعلية.
 
-Data Support
-openpyxl==3.1.2 – Excel file handling (with CSV fallback).
+دعم البيانات
+openpyxl==3.1.2 – التعامل مع ملفات Excel (مع تراجع إلى CSV).
 
-Utilities
-python-dotenv==1.0.0 – Environment variable management.
+الأدوات المساعدة
+python-dotenv==1.0.0 – إدارة متغيرات البيئة.
 
-python-dateutil==2.8.2 – Date/time utilities.
+python-dateutil==2.8.2 – أدوات التاريخ/الوقت.
 
-Support
-Getting Help
-Check the dashboard status – Import warnings show what’s missing.
+الدعم
+الحصول على المساعدة
+تحقق من حالة لوحة التحكم - تحذيرات الاستيراد تظهر ما هو ناقص.
 
-Review error messages – Clear error descriptions with solutions.
+راجع رسائل الخطأ - أوصاف واضحة للأخطاء مع حلول.
 
-Check file permissions – Ensure write access to project directory.
+تحقق من صلاحيات الملفات - تأكد من صلاحية الوصول للكتابة في مجلد المشروع.
 
-Verify dependencies – Run pip list to check installed packages.
+تحقق من المتطلبات - نفذ pip list للتحقق من الحزم المثبتة.
 
-Common Solutions
-Missing modules:
+الحلول الشائعة
+الوحدات الناقصة:
 
 bash
-نسخ
-تحرير
 pip install -r requirements.txt
-Permission errors: Ensure correct directory write permissions.
+أخطاء الصلاحيات: تأكد من صلاحيات الكتابة الصحيحة للمجلد.
 
-Port conflicts: Use a different port (--server.port 8502).
+تضارب المنافذ: استخدم منفذ مختلف (--server.port 8502).
 
-Data issues: Use backup/restore features.
+مشاكل البيانات: استخدم ميزات النسخ الاحتياطي/الاستعادة.
 
-License
-This project is open source and available under the MIT License.
+الترخيص
+هذا المشروع مفتوح المصدر ومتاح تحت رخصة MIT.
 
-Quick Commands Summary
+ملخص الأوامر السريعة
 bash
-نسخ
-تحرير
-# 1. Install everything
+# 1. تثبيت كل شيء
 pip install -r requirements.txt
 
-# 2. Run dashboard
+# 2. تشغيل لوحة التحكم
 streamlit run streamlit_dashboard.py
 
-# 3. Access at
+# 3. الوصول على
 http://localhost:8501
